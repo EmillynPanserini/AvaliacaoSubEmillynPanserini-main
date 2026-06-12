@@ -1,0 +1,205 @@
+
+/* Váriavéis globais */
+:root{
+    --bg-color: #1A1A1A;
+    --nav-bg: #2A2A2A;
+    --text-main: #F0F0F0;
+    --accent-color: #0DD1D9;
+    --accent-hover: #0BA5AB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    font-optical-sizing: auto; /* melhora legibilidade em tamanhos de fontes diferentes*/
+    min-height: 100vh; /* garante que o body ocupe a tela toda*/
+}
+
+header {
+    display: flex;
+    align-items: center; /* alinha a logo e o texto verticalmente no centro */
+    justify-content: center; /* centraliza o conjunto na tela. Mude para flex-start se quiser na esquerda */
+    gap: 20px; /* cria um espaço entre a logo e o título */
+    padding: 20px 0 10px 0;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+header figure {
+    margin: 0;
+}
+
+.logo{
+    width: 150px; /*define a largura do elemento, neste caso a imagem que está com a classe logo*/
+    height: 90px; /*define a altura do elemento, neste caso a imagem que está com a classe logo*/
+    border-radius: 50%;
+}
+
+/*Estilos para barra de navegação*/
+
+nav{
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-top: 10px;
+}
+
+nav ul{
+    background-color: var(--nav-bg);
+    list-style-type: none;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li{
+    margin: 0 20px;
+}
+
+nav ul li a{
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    text-decoration: none; /*tira a linha do link*/
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color); /* linha ciano*/
+}
+
+
+
+/*Estilos do conteúdo principal (main)*/
+/* Transforma o Main em um Contêiner Flexível para alinhar os itens lado a lado */
+main.container-layout {
+    display: flex;
+    justify-content: space-between; /* Espalha o conteúdo principal e o aside */
+    align-items: flex-start; /* Alinha ambos pelo topo */
+    gap: 40px; /* Cria um espaço de 40px entre a section e o aside */
+    max-width: 1100px; /* Limita a largura para não esticar muito no PC */
+    margin: 40px auto; /* Centraliza o bloco todo na tela */
+    padding: 0 20px;
+    flex: 1; /* Empurra o footer pro final da página */
+    width: 100%;
+}
+
+/* O conteúdo principal ocupa o espaço que sobrar à esquerda */
+.conteudo-principal {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+/* O article dentro do conteúdo principal */
+main section article {
+    width: 100%;
+}
+
+/* Estiliza apenas os parágrafos do article */
+article p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 10px 0 25px 0;
+    line-height: 1.6;
+}
+
+article h2 {
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+/* Fixa o tamanho do Aside na lateral direita */
+aside {
+    width: 320px;
+    min-width: 320px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: var(--nav-bg);
+    flex-shrink: 0; /* Impede que o aside seja esmagado pelo texto esquerdo */
+}
+
+aside h3 {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+aside p {
+    font-size: 0.95rem;
+    color: #D1D5DB;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Estilos para a imagem de Conta Finalizada no conteúdo principal */
+article figure {
+    margin: 30px 0; /* Dá um espaço em cima e embaixo da imagem */
+    text-align: center; /* Centraliza a imagem e a legenda */
+}
+
+article figure img {
+    max-width: 100%; /* Garante que a imagem não vaze da tela */
+    height: auto;
+    border-radius: 8px; /* Arredonda as bordas */
+    border: 2px solid var(--accent-color); /* Adiciona uma borda com a cor de destaque (ciano) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave para destacar a imagem do fundo */
+    display: inline-block;
+}
+
+article figure figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #9CA3AF; /* Deixa o texto num tom de cinza claro */
+    font-style: italic; /* Deixa a legenda em itálico */
+}
+
+
+/* Estilos dos links das redes sociais */
+
+.btn-rede {
+    display: inline-block; /* Permite colocar margem e alinhar lado a lado */
+    margin-top: 15px;
+    margin-right: 15px; /* Cria o espaço entre um botão e outro */
+    color: var(--bg-color); 
+    background-color: var(--accent-color); 
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-rede:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px); 
+}
+
+
+/*Estilos para o rodapé*/
+footer{
+    background-color: var(--nav-bg);
+    color: var(--text-main);
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #2A3241; /* Separação sutil */
+    font-size: 0.9rem;
+    position: relative; /*o relative é pq conforme for adicionado elementos no main o footer desce, ele n fica fixo*/
+    border-bottom: 2px solid var(--accent-color); /* linha ciano*/
+}
